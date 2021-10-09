@@ -12,15 +12,17 @@
     { label: "Item6", href: "#" },
     { label: "Item7", href: "#" },
   ];
+    // mobile icon and display menu
+	let showMobileMenu = false;
 </script>
 
 <div>
   <nav>
     <div class="inner">
-      <div>
+      <div class={`mobile-icon${showMobileMenu ? ' active' : ''}`}>
         <div class="middle-line" />
       </div>
-      <ul>
+      <ul  class={`navbar-list${showMobileMenu ? ' mobile' : ''}`}>
         {#each navItem as item}
           <li><a href={item.href}>{item.label}</a></li>
         {/each}
