@@ -144,15 +144,15 @@
     height: 1px;
     background-color: rgb(209, 209, 218);
   }
-  .navbar-list  a{
-	  color: #fff;
-	  text-decoration: none;
-	  display: flex;
-	  height: 45px;
-	  align-items: center;
+  .navbar-list a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    height: 45px;
+    align-items: center;
 
-	  padding: 0 10px;
-	  font-size: 13px;
+    padding: 0 10px;
+    font-size: 13px;
   }
 
   h1 {
@@ -161,10 +161,23 @@
     font-size: 4em;
     font-weight: 100;
   }
-
+  /* media queries */
   @media (min-width: 640px) {
     main {
       max-width: none;
+    }
+  }
+
+  @media only screen and (min-width: 767px) {
+    .mobile-icon {
+      display: none;
+    }
+    .navbar-list {
+      display: flex;
+      padding: 0;
+    }
+    .navbar-list a {
+      display: inline-flex;
     }
   }
 </style>
