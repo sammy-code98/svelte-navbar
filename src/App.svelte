@@ -63,6 +63,7 @@ import { onMount } from "svelte";
     background-color: #3988d6;
     font-family: "Leckerli One", cursive;
     height: 45px;
+    width: 100%;
     top: 0;
   }
   .inner {
@@ -137,7 +138,8 @@ import { onMount } from "svelte";
   /* navbar list sytle */
   .navbar-list {
     display: none;
-    width: 100%;
+    /* change the width to 100% if you want it to fill the  mobile screen */
+    width: 50%;
     justify-content: space-between;
     margin: 0;
     padding: 0 40px;
@@ -146,7 +148,7 @@ import { onMount } from "svelte";
     background-color: #3988d6;
     position: fixed;
     display: block;
-    height: calc(100% - 45px);
+    height: calc(100% - 53px);
     bottom: 0;
     left: 0;
   }
@@ -169,7 +171,6 @@ import { onMount } from "svelte";
     display: flex;
     height: 45px;
     align-items: center;
-
     padding: 0 10px;
     font-size: 13px;
   }
