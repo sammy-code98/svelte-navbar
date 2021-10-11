@@ -1,4 +1,7 @@
 <script>
+import { onMount } from "svelte";
+
+
   export let name;
 
   // navigation items
@@ -14,12 +17,28 @@
   ];
   // mobile icon and display menu
   let showMobileMenu = false;
+  // event handler for mobile menu
+  const MobileIcon = () => (showMobileMenu = !showMobileMenu);
+
+  // Media match query handler
+
+  const mediaQuery = (e) => {
+    // mobile state resetter
+    if (!e.matches) {
+      showMobileMenu = false;
+    }
+  };
+  // use the onmount hook to  attach media query listener
+  onMount(()=>{
+    const mediaListener =  window.matchMedia("(max-width :767px)")
+    mediaListener.addListener(mediaQuery)
+  })
 </script>
 
 <div>
   <nav>
     <div class="inner">
-      <div class={`mobile-icon${showMobileMenu ? " active" : ""}`}>
+      <div on:click="{MobileIcon}" class={`mobile-icon${showMobileMenu ? " active" : ""}`}>
         <div class="center-line" />
       </div>
       <ul class={`navbar-list${showMobileMenu ? " mobile" : ""}`}>
